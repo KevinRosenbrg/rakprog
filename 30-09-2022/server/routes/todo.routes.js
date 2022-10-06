@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const dogsController = require('../controllers/dogs.controller')
+const todoController = require('../controllers/todo.controller')
 
 // middleware that is specific to this router
 router.use((req, res, next) => {
@@ -22,9 +22,9 @@ router.use((req, res, next) => {
     next()
   }
 
-  router.get('/', getMiddleWare, dogsController.read)
-  // router.post('/:name', dogsController.post) // tekib ERROR
-  router.put('/:name', dogsController.update)
-  router.delete('/:name', dogsController.delete)
+  router.get('/', getMiddleWare, todoController.read)
+  // router.post('/:name', todoController.post) // tekib ERROR
+  router.put('/:name', todoController.update)
+  router.delete('/:name', todoController.delete)
   
   module.exports = router

@@ -15,13 +15,13 @@ exports.create = async (req, res) => {
    res.send(doggie)
 }
 exports.read = async (req, res) => {
-  const doggie = await Doggie.find({}, { _id:0, _v:0 })
+    const doggie = await Doggie.find({}, { _id:0, _v:0 })
     res.send(doggie)
 }
 exports.update = (req, res) => {
    
 }
 exports.delete = (req, res) => {
-
+    
     res.send('delete')
 }

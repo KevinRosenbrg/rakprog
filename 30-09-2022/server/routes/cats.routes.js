@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const helloController = require('../controllers/hello.controller')
+const catsController = require('../controllers/cats.controller')
 
 // middleware that is specific to this router
 router.use((req, res, next) => {
@@ -22,9 +22,9 @@ router.use((req, res, next) => {
     next()
   }
 
-  router.get('/', getMiddleWare, helloController.read)
-  // router.post('/:name', helloController.post) // tekib ERROR
-  router.put('/:name', helloController.update)
-  router.delete('/:name', helloController.delete)
+  router.get('/', getMiddleWare, catsController.read)
+  // router.post('/:name', catsController.post) // tekib ERROR
+  router.put('/:name', catsController.update)
+  router.delete('/:name', catsController.delete)
   
   module.exports = router

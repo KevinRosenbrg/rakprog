@@ -1,31 +1,33 @@
 // CRUD
 
-let hellos = ['Greetings']
+let cats = ['fluffy']
 
 exports.create = (req, res) => {
     const { name } = req.params
 
-    hellos.push(name)
-    res.send(hellos)
+    cats.push(name)
+    res.send(cats)
 }
 exports.read = (req, res) => {
     console.log(req.user)
-    res.send('read')
+    res.send(cats)
 }
 exports.update = (req, res) => {
     const { name } = req.params
 
-    hellos = hellos.map((hello) => {
-        if (hello === name) {
-            return hello + '_updated'
+    cats = cats.map((cat) => {
+        if (cat === name) {
+            return cat + '_updated'
         }
-        return hello
+        return cat
     })
-    res.send(hellos)
+    res.send(cats)
 }
 exports.delete = (req, res) => {
     // siia teha ise kustutamine
+    const { name } = req.params
 
+    
     
     res.send('delete')
 }

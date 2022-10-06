@@ -3,8 +3,9 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const app = express()
 const PORT = 8080
-const helloRoutes = require('./routes/hello.routes')
+const catsRoutes = require('./routes/cats.routes')
 const dogRoutes = require('./routes/dogs.routes')
+const todoRoutes = require('./routes/todo.routes')
 require('dotenv').config()
 
 app.use(morgan('dev'))
@@ -16,8 +17,9 @@ mongoose
   .then(() => console.log('Database connection established'))
   .catch((e) => console.error(e))
 
-app.use('/hellos', helloRoutes)
-app.use('dogs', dogRoutes)
+app.use('/cats', catsRoutes)
+app.use('/dogs', dogRoutes)
+app.use('/todo', todoRoutes)
 
 // CRUD
 app.get('/', (req, res) => {
